@@ -1,4 +1,4 @@
-# coursera_dl (latex math viewer: https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related)
+# coursera_dl 
 ## neural network and deep learning
    * week1:
       * overall for neural network and deep learning.
@@ -54,3 +54,4 @@
 ## Lecture3
 ## Lecture4
 ## Lecture4
+(latex math viewer: https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related)
