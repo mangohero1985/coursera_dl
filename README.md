@@ -1,5 +1,5 @@
-# coursera_dl 
-## neural network and deep learning
+# Coursera_dl 
+## Neural network and deep learning
    * week1:
       * overall for neural network and deep learning.
       * interview to Geoffrey Hinton
@@ -36,21 +36,49 @@
             better than logistic because the median point locates in right zero, but logistic locates in 0.5. 
             * Relu: 
             most used in current days. High speed even it is not differential, but still works well. 
-            * Leaky-relu: 
+            * Leaky relu: 
             just a transform for relu when w less than zero, multiply a small number to w.              
  
  		So many and explore by your self. Don't be lazy and do by yourself.
 ## Hyperparameter_tuning, regularization and optimization
-    * week1
-      * Initialization
-        * Zeros initialization
-          - As said before, the symmetry can't be broken. all of nodes would be trained in same weight. No any effect in using hidden layer.
-        * Random initialization
-        * Xavier initialization
-      * Regularization
-      * Gradient checking
-    * week2
-    * week3
+   * week1:
+    * Initialization
+      * Zeros initialization
+        * As said before, the symmetry can't be broken. all of nodes would be trained in same weight. Performance of it would very poor around 50%. The cost wouldn't get changed as long as iteration.
+      * Random initialization
+        * the parameters are initialized from normal distribution . The result would get better. After generate an array of parameter, it is better to multiply a small number like 0.01 to make parameter approach to zero.
+      * Xavier initialization:
+        * A substitute of small number is to scale it by layer size. 
+          * Sigmoid/Tanh: sqrt(1./layers_dims[l-1])
+          * Relu: sqrt(2./layers_dims[l-1])
+      * Don't initialize to values that are too large.
+    * Regularization
+      * L2-regularization
+        * In cost function, add a item to the cost computation behind of the equation
+            cost = cross_entropy_cost + L2_regularization_cost
+        * In back_propogation, add a item to each layer of dw as W*lambd/m.
+        * Increase the value of lambd would decrease the value of weight and reduce over-fitting of model.
+      * Dropout
+          * Normal dropout: In training phase, use dropout to randomly choose neutrons in hidden layers. In test phase, scale activation to original ones by multiplying dropout rate p.
+          * Inverted dropout(common used): also use dropout proportion of hidden units, then divide by 1/p to restore the scale of units for next layer. In test time, **do nothing**.
+    * Gradient checking
+      * Check correction of gradient for back-propagation
+        * Use a approximate gradient to approach gradients computed by model. 
+          $gradapprox = \frac{J^{+} - J^{-}}{2  \varepsilon}$
+        * if the difference between approximate one and gradients computed is small enough (epsilon = 1e-7). It means the back-propagation would be correct and vice versa.
+          $$ difference = \frac {\mid\mid grad - gradapprox \mid\mid_2}{\mid\mid grad \mid\mid_2 + \mid\mid gradapprox \mid\mid_2} \tag{2}$$
+        * Gradient checking is slow, so we don't run it in every iteration of training. You would usually run it only to make sure your code is correct, then turn it off and use backprop for the actual learning process.
+    * Bias and variance:
+      * In deep learning,no trade-off as other machine learning between bias and variance. Ones can decrease them separately. 
+        * High variance(**over-fitting**): decrease the complexity of model.
+          * add regularization
+          * dropout
+          * increase training set
+        * High bias(**under-fitting**): increase the complexity of model.
+          * increase size of layers 
+          * increase size of units in each layer
+   * week2
+   * week3
 ## Lecture3
 ## Lecture4
 ## Lecture4
