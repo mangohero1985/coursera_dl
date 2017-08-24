@@ -86,6 +86,8 @@
          * Exponentially weighted averages: Bias in initial can be corrected  phase by using bias correction.
          * Momentum gradient decent is the method that gradient decent with exponentially weighted averages. The gradient oscillation in original gradient descent would be averaged. So the speed of that is faster than common gradient descent.
            <img src="./images/momentum.png" alt="Drawing" style="width: 200px;"/>
+         * In practice, people don't use bias correction (Vdw/1-beta),because after 10 iteration, the moving average would warmed up and no longer the bias estimate.
+         * The common choice of beta is 0.9.
      - 
    * week3
 ## Lecture3
