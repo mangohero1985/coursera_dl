@@ -101,7 +101,23 @@
               | beta_monentum   | 0.9           | 
               | beta_RMSprop    | 0.999         |
               | epsilon         | $e^{-8}$      |
-     - 
+     - Learning rate decay:
+       + there are many ways can adjust learning rate on line:
+         * exponentially decay
+         * stair decay
+         * square root decay
+         * and so on...
+     - Fundamental concept and experience:
+       + **Iteration**: using data to update parameter one time that calls 1 iteration
+       + **Epoch**: Using through entire data once in many times of iterations called 1 epoch.
+       + **Batch gradient descent**: use all size of the data to update parameter. So here, 1 iteration equals 1 epoch. The parameters would be updated by k iterations (also k epochs)
+       + **Stochastic gradient descent**: use 1 of data to update parameters once. So here, iteration would be m (size of data), and the parameters would be updated by m*k times.
+       + **Mini-batch**: use a small batch of data to update parameter. So here, iteration would be m/mini-batch, and the parameter would be updated by k*m/mini-batch. 
+     - Improve optimization:
+       + Try better random initialization for weights
+       + Use mini-batch
+       + Use Adam-descent
+       + tuning learning rate.
    * week3
 ## Lecture3
 ## Lecture4
