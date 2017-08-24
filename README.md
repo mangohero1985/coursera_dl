@@ -82,12 +82,25 @@
        + Mini-batch:
          * Small dataset(e.g. 2000): just use batch gradient decent
          * Large dataset: use mini-batch (64, 128, 256, 512)
-       + Gradient descent with momentum:
-         * Exponentially weighted averages: Bias in initial can be corrected  phase by using bias correction.
-         * Momentum gradient decent is the method that gradient decent with exponentially weighted averages. The gradient oscillation in original gradient descent would be averaged. So the speed of that is faster than common gradient descent.
-           <img src="./images/momentum.png" alt="Drawing" style="width: 200px;"/>
-         * In practice, people don't use bias correction (Vdw/1-beta),because after 10 iteration, the moving average would warmed up and no longer the bias estimate.
-         * The common choice of beta is 0.9.
+       + Speed up for gradient descent:
+         * Gradient descent with momentum:
+           - Exponentially weighted averages: Bias in initial can be corrected  phase by using bias correction.
+           - Momentum gradient decent is the method that gradient decent with exponentially weighted averages. The gradient oscillation in original gradient descent would be averaged. So the speed of that is faster than common gradient descent.
+             <img src="./images/momentum.png" alt="Drawing" style="width: 200px;"/>
+           - In practice, people don't use bias correction (Vdw/1-beta),because after 10 iteration, the moving average would warmed up and no longer the bias estimate.
+           - The common choice of beta is 0.9.
+         * RMSprop (Root mean square prop):
+           - The vertical direction is represented by a and horizontal direction is w, RMSprop is aim to slow down variance of b and accelerate the speed of w.
+       + Adam(adaptive moment estimation) optimization:
+         * Momentum + RMSprop
+         * Hyper-parameter
+         | Hyper-parameter|heuristic value| 
+         | -------------- |:-------------:| 
+         | alpha          | tuning        |
+         | beta_monentum  | 0.9           | 
+         | beta_RMSprop   | 0.999         |
+         | epsilon        | $e^-10$       |
+
      - 
    * week3
 ## Lecture3
