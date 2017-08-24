@@ -78,8 +78,17 @@
           * increase size of layers 
           * increase size of units in each layer
    * week2
+     - Optimization choices:
+       + Mini-batch:
+         * Small dataset(e.g. 2000): just use batch gradient decent
+         * Large dataset: use mini-batch (64, 128, 256, 512)
+       + Gradient descent with momentum:
+         * Exponentially weighted averages: Bias in initial can be corrected  phase by using bias correction.
+         * Momentum gradient decent is the method that gradient decent with exponentially weighted averages. The gradient oscillation in original gradient descent would be averaged. So the speed of that is faster than common gradient descent.
+           <img src="images/momentum.png">
+     - 
    * week3
 ## Lecture3
 ## Lecture4
-## Lecture4
+## Lecture5
 (latex math viewer: https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related)
