@@ -94,12 +94,12 @@
        + Adam(adaptive moment estimation) optimization:
          * Momentum + RMSprop
          * Hyper-parameter
-            | hyper-parameters|heuristic value| 
-            | -------------- |:-------------:| 
-            | alpha          | tuning        |
-            | beta_monentum  | 0.9           | 
-            | beta_RMSprop   | 0.999         |
-            | epsilon        | $e^{-8}$      |
+| hyper-parameters|heuristic value| 
+| -------------- |:-------------:| 
+| alpha          | tuning        |
+| beta_monentum  | 0.9           | 
+| beta_RMSprop   | 0.999         |
+| epsilon        | $e^{-8}$      |
 
      - 
    * week3
