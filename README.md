@@ -85,7 +85,7 @@
        + Gradient descent with momentum:
          * Exponentially weighted averages: Bias in initial can be corrected  phase by using bias correction.
          * Momentum gradient decent is the method that gradient decent with exponentially weighted averages. The gradient oscillation in original gradient descent would be averaged. So the speed of that is faster than common gradient descent.
-           <img src="images/momentum.png">
+           <img src="images/momentum.png" style="width:400px;height:250px;">
      - 
    * week3
 ## Lecture3
