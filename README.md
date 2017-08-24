@@ -102,10 +102,10 @@
               | beta_RMSprop    | 0.999         |
               | epsilon         | $e^{-8}$      |
      - Learning rate decay:
-       + there are many ways can adjust learning rate on line:
-         * exponentially decay
-         * stair decay
-         * square root decay
+       + There are many ways can adjust learning rate on line:
+         * Exponentially decay
+         * Stair decay
+         * Square root decay
          * and so on...
      - Fundamental concept and experience:
        + **Iteration**: using data to update parameter one time that calls 1 iteration
@@ -117,7 +117,7 @@
        + Try better random initialization for weights
        + Use mini-batch
        + Use Adam-descent
-       + tuning learning rate.
+       + Tuning learning rate.
    * week3
 ## Lecture3
 ## Lecture4
