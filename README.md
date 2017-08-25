@@ -117,6 +117,8 @@
    * Try better random initialization for weights
    * Use mini-batch
    * Use Adam-descent
+     * Relatively low memory requirements (though higher than gradient descent and gradient descent with momentum)
+     * Usually works well even with little tuning of hyperparameters (except $\alpha$)
    * Tuning learning rate.
 ##### week3
    * Hyper-parameter tuning
