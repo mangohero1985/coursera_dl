@@ -1,9 +1,9 @@
 # Coursera_dl 
 ## Neural network and deep learning
-   * week1:
+   #### week1:
       * overall for neural network and deep learning.
       * interview to Geoffrey Hinton
-   * week2:
+   #### week2:
       * Python basic
         * Avoid use for-loop or while loop in computation to some extend. Try best to make matrix computation.
         * Using numpy function to complete matrix/vector computation.
@@ -11,7 +11,7 @@
       * 0-layer logistic regression(only a activation node) 
         * if just make a simple logistic regression, w and b can be initialized in "zero" vector. But for multi-layer neural network w can't be initialized as "zero". The reason would be introduced in next section.
        * Different learning rate would influence performance deeply.
-   * week3: 
+   #### week3: 
       * Implement a simple 1-layer NN
        * Compared with previous logistic regression, 1-layer NN can solve some non-linear separable problem.
        * W must be initialized by a random normal. It is because that assigning different weights to each node in hidden layer can trigger them to learn different decision boundary. If initializing zero or same weight to each weight, it would result to a balance where each node learns same decision boundary, and then the whole network would be same with only on node. 
@@ -19,7 +19,7 @@
         * The loss function is chosen as cross-entropy for logistic activation. Here, the square loss + logistic would become as a non-convex which has many local minima. 
         * Cost function = averaging(loss function). Cost function would involve in back-propagation. 
         * Learning rate, hidden layer size and number of nodes are hyper-parameter. Kinds of method can be used to choose them. Try them by your self.
-   * week4:
+   #### week4:
       * Deep neural network: step by step
         * The difference from shallow neural network is just using loop to finish forward and back propagation.
         * Cultivate yourself for a good writing habit. 
@@ -41,7 +41,7 @@
  
  		So many and explore by your self. Don't be lazy and do by yourself.
 ## Hyperparameter_tuning, regularization and optimization
-   * week1:
+   #### week1:
     * Initialization
       * Zeros initialization
         * As said before, the symmetry can't be broken. all of nodes would be trained in same weight. Performance of it would very poor around 50%. The cost wouldn't get changed as long as iteration.
@@ -77,7 +77,7 @@
         * High bias(**under-fitting**): increase the complexity of model.
           * increase size of layers 
           * increase size of units in each layer
-   * week2
+   #### week2
      - Optimization choices:
        + Mini-batch:
          * Small dataset(e.g. 2000): just use batch gradient decent
@@ -118,7 +118,11 @@
        + Use mini-batch
        + Use Adam-descent
        + Tuning learning rate.
-   * week3
+   ##### week3
+     - Hyper-parameter tuning
+     - Batch normalization
+     - multi-class classification
+     - Tensorflow
 ## Lecture3
 ## Lecture4
 ## Lecture5
