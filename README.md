@@ -39,7 +39,7 @@
         - Leaky relu: 
         just a transform for relu when w less than zero, multiply a small number to w.              
  
- 		So many and explore by your self. Don't be lazy and do by yourself.
+ 		Don't be lazy and do by yourself.
 ## Hyperparameter_tuning, regularization and optimization
 #### week1:
 - Initialization
