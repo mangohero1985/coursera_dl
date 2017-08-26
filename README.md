@@ -123,9 +123,9 @@
 #### week3
    * Hyper-parameter tuning
      - Hyper-parameter:
-       + Learning rate \alpha *****
-       + Momentum \beta
-       + Adam: \beta_{1}, \beta_{2}, epsilon
+       + Learning rate $\alpha$ *****
+       + Momentum $\beta$
+       + Adam: $\beta_{1}$, $\beta_{2}$, epsilon
        + Number of layers
        + number of hidden units
        + Learning rate decay
@@ -142,7 +142,7 @@
        + Activation normalizing can keep the distribution stable and avoid the covariate shift brought from value change in previous layer.
        + Practically, in test, for single test data, the mean and variance for each layer is computed from training mini-batch by exponentially weighted average. 
    * multi-class classification
-     - Softmax activation and $-\Sigma y_{i}log y_hat_{i}$
+     - Softmax activation and $-\Sigma y_{i}log y\_hat_{i}$
    * Tensorflow
 ## Lecture3
 ## Lecture4
