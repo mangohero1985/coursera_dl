@@ -122,7 +122,20 @@
    * Tuning learning rate.
 ##### week3
    * Hyper-parameter tuning
+     - Hyper-parameter:
+       + Learning rate alpha *****
+       + Momentum beta
+       + Adam: beta1, beta2, epsilon
+       + Number of layes
+       + number of hidden units
+       + Learning rate decay
+     - Logarithm skill
    * Batch normalization
+     - Normalizing activation:
+       + Data normalization can make contour much rounder.
+       + Normalize the value of not a but **z**.
+       + It can make the training speed much faster.
+       + $z_norm=(z_old -mu)/sigma$, $z_new = alpha*z_norm+beta$. Here, parameter alpha and beta are controlling the distribution of z for each different activation unit.
    * multi-class classification
    * Tensorflow
 ## Lecture3
