@@ -120,7 +120,7 @@
      * Relatively low memory requirements (though higher than gradient descent and gradient descent with momentum)
      * Usually works well even with little tuning of hyper-parameters (except $\alpha$)
    * Tuning learning rate.
-##### week3
+#### week3
    * Hyper-parameter tuning
      - Hyper-parameter:
        + Learning rate \alpha *****
@@ -137,7 +137,12 @@
        + It can make the training speed much faster.
        + $z_{norm}=(z_{old} - \mu)/\sigma$, $z_{new} = \alpha*z_{norm}+\beta$.
           <p>Here, parameter alpha and beta are controlling the distribution of z for each different activation unit.<p>
+       + $\beta$ and $\alpha$ can be learned as same as w and b.
+       + Using batch normalization, the parameter of b would be helpless. because all the bias item would be eliminated by mean subtraction.
+       + Activation normalizing can keep the distribution stable and avoid the covariate shift brought from value change in previous layer.
+       + Practically, in test, for single test data, the mean and variance for each layer is computed from training mini-batch by exponentially weighted average. 
    * multi-class classification
+     - Softmax activation and $-\Sigma y_{i}log y_hat_{i}$
    * Tensorflow
 ## Lecture3
 ## Lecture4
