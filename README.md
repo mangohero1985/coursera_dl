@@ -135,7 +135,7 @@
        + Data normalization can make contour much rounder.
        + Normalize the value of not a but **z**.
        + It can make the training speed much faster.
-       + $z_{norm}=(z_{old} - \mu)/\sigma$, $z_{new} = \alpha*z_{norm}+\beta$. Here, parameter alpha and beta are controlling the distribution of z for each different activation unit.
+       + $z_{norm}=(z_{old} - \mu)/\sigma$, $z_{new} = \alpha*z_{norm}+\beta$.  Here, parameter alpha and beta are controlling the distribution of z for each different activation unit.
    * multi-class classification
    * Tensorflow
 ## Lecture3
