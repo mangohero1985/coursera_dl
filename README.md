@@ -118,15 +118,15 @@
    * Use mini-batch
    * Use Adam-descent
      * Relatively low memory requirements (though higher than gradient descent and gradient descent with momentum)
-     * Usually works well even with little tuning of hyperparameters (except $\alpha$)
+     * Usually works well even with little tuning of hyper-parameters (except $\alpha$)
    * Tuning learning rate.
 ##### week3
    * Hyper-parameter tuning
      - Hyper-parameter:
-       + Learning rate alpha *****
-       + Momentum beta
-       + Adam: beta1, beta2, epsilon
-       + Number of layes
+       + Learning rate \alpha *****
+       + Momentum \beta
+       + Adam: \beta\_1, \beta\_2, epsilon
+       + Number of layers
        + number of hidden units
        + Learning rate decay
      - Logarithm skill
@@ -135,7 +135,7 @@
        + Data normalization can make contour much rounder.
        + Normalize the value of not a but **z**.
        + It can make the training speed much faster.
-       + $z_norm=(z_old -mu)/sigma$, $z_new = alpha*z_norm+beta$. Here, parameter alpha and beta are controlling the distribution of z for each different activation unit.
+       + $z\_norm=(z\_old - \mu)/\sigma$, $z\_new = \alpha*z\_norm+\beta$. Here, parameter alpha and beta are controlling the distribution of z for each different activation unit.
    * multi-class classification
    * Tensorflow
 ## Lecture3
