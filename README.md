@@ -142,7 +142,7 @@
        + Activation normalizing can keep the distribution stable and avoid the covariate shift brought from value change in previous layer.
        + Practically, in test, for single test data, the mean and variance for each layer is computed from training mini-batch by exponentially weighted average. 
    * multi-class classification
-     - Softmax activation and $-\Sigma y_{i}log yhat_{i}$
+     - Softmax activation and $-\Sigma y_{i}log \hat{mathbf{y_{i}}}$
    * Tensorflow
 ## Lecture3
 ## Lecture4
