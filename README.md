@@ -156,16 +156,25 @@
           - Run the session to execute the graph
       - You can execute the graph multiple times as you've seen in model()
       - The back-propagation and optimization is automatically done when running the session on the "optimizer" object.
-## Introduction to machine learning strategy
+## Structuring machine learning projects
  #### week1
   * Motivating to ML strategy
       
       |data |model|regularization|optimization|
       | --------------  |:-------------:|:---:|:----:|
       | more data|bigger network|dropout |Longer GD|
-      |  more diverse train set|small network| |Adam|
-      |  |more hidden units|L2...| |
+      |  more diverse train set|small network|L2...|Adam|
+      |  |more hidden units| | |
       |  |activation function| | |
+  * Chain of assumption in ML
+    - Fit on training set --> dev set --> test set --> real world
+    - Experienced persons always know how to improve the model when they suffer form poor results in different occasions.
+    - For orthogonalization, not to use early stopping. 
+  * Set up training/dev/test set
+    - Come from same distribution.
+  * Bayes optimal error: best possible error
+  * In some applications such as image recognition, human error can be regarded as Bayes optimal error approximately. In one hand, if the training set is relatively far from it, it means the model is still under-fitting.In another hand, if the training error is close to the human error, alter to decrease dev error but not training error. 
+
 
 ## Lecture4
 ## Lecture5
