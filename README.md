@@ -171,7 +171,7 @@
     - Experienced persons always know how to improve the model when they suffer form poor results in different occasions.
     - For orthogonalization, not to use early stopping. 
   * Set up training/dev/test set
-    - Come from same distribution.
+    - it is important to choose **dev** and **test** from same distribution which must be taken randomly from all the data.
   * Bayes optimal error: best possible error
   * In some applications such as image recognition, human error can be regarded as Bayes optimal error approximately. In one hand, if the training set is relatively far from it, it means the model is still under-fitting.In another hand, if the training error is close to the human error, alter to decrease dev error but not training error.
   
