@@ -159,6 +159,7 @@
 ## Introduction to machine learning strategy
  #### week1
   * Motivating to ML strategy
+  
           |data |model|regularization|optimization|
           | --------------  |:-------------:|:---:|:----:|
           | more data|bigger network|dropout |Longer GD|
