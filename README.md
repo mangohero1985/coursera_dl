@@ -174,14 +174,15 @@
     - Come from same distribution.
   * Bayes optimal error: best possible error
   * In some applications such as image recognition, human error can be regarded as Bayes optimal error approximately. In one hand, if the training set is relatively far from it, it means the model is still under-fitting.In another hand, if the training error is close to the human error, alter to decrease dev error but not training error.
-          |diff of train&human >|diff of train&dev >| 
-          | --------------  |:-------------:| 
-          | bias deduction  | variance deduction
-          | high bias           | high variance        |
-          | under-fitting   | over-fitting           | 
-          | change hyper-para    | regularization        |
-          | enlarge model    | reduce model      |
-          |try training longer| add training set|
+  
+    |diff of train&human >|diff of train&dev >| 
+    | --------------  |:-------------:| 
+    | bias deduction  | variance deduction
+    | high bias           | high variance        |
+    | under-fitting   | over-fitting           | 
+    | change hyper-para    | regularization        |
+    | enlarge model    | reduce model      |
+    |try training longer| add training set|
 
 
 ## Lecture4
