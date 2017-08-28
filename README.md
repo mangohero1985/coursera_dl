@@ -143,8 +143,28 @@
        + Practically, in test, for single test data, the mean and variance for each layer is computed from training mini-batch by exponentially weighted average. 
    * multi-class classification
      - Softmax activation and loss is $-\Sigma y_{i}log \hat{y_{i}}$
-   * Tensorflow
-## Lecture3
+   * Frameworks:
+     - Ease of programing
+     - Running speed
+     - Open source
+   * Assignment notes:
+      - The two main object classes in tensorflow are Tensors and Operators. 
+      - When you code in tensorflow you have to take the following steps:
+          - Create a graph containing Tensors (Variables, Placeholders ...) and Operations (tf.matmul, tf.add, ...)
+          - Create a session
+          - Initialize the session
+          - Run the session to execute the graph
+      - You can execute the graph multiple times as you've seen in model()
+      - The back-propagation and optimization is automatically done when running the session on the "optimizer" object.
+## Introduction to machine learning strategy
+ #### week1
+  * Motivating to ML strategy
+          |data |model|regularization|optimization|
+          | --------------  |:-------------:|:---:|:----:|
+          | more data|bigger network|dropout |Longer GD|
+          |  more diverse train set|small network|Adam|
+          |  |more hidden units|L2...||
+          |  |activation function|||
 ## Lecture4
 ## Lecture5
 (latex math viewer: https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related)
