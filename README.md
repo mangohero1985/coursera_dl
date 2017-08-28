@@ -159,13 +159,13 @@
 ## Introduction to machine learning strategy
  #### week1
   * Motivating to ML strategy
-  
-          |data |model|regularization|optimization|
-          | --------------  |:-------------:|:---:|:----:|
-          | more data|bigger network|dropout |Longer GD|
-          |  more diverse train set|small network| |Adam|
-          |  |more hidden units|L2...| |
-          |  |activation function| | |
+      
+      |data |model|regularization|optimization|
+      | --------------  |:-------------:|:---:|:----:|
+      | more data|bigger network|dropout |Longer GD|
+      |  more diverse train set|small network| |Adam|
+      |  |more hidden units|L2...| |
+      |  |activation function| | |
 
 ## Lecture4
 ## Lecture5
