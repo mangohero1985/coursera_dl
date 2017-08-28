@@ -163,9 +163,10 @@
           |data |model|regularization|optimization|
           | --------------  |:-------------:|:---:|:----:|
           | more data|bigger network|dropout |Longer GD|
-          |  more diverse train set|small network|Adam|
+          |  more diverse train set|small network||Adam|
           |  |more hidden units|L2...||
           |  |activation function|||
+          
 ## Lecture4
 ## Lecture5
 (latex math viewer: https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related)
