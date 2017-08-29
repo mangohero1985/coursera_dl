@@ -1,4 +1,4 @@
-# Coursera_dl 
+# Learning note 
 ## Neural network and deep learning
 #### week1:
   * overall for neural network and deep learning.
@@ -183,6 +183,46 @@
     | change hyper-para    | regularization        |
     | enlarge model    | reduce model      |
     |try training longer| add training set|
+ #### week2
+  * Error analysis
+    - Deep learning algorithm are quite robust to random error in the training set but not robust to the systematic error.
+    - Metric of fixing the miss-label in dev/test set is the percent of miss-labeled data in all the dev/test set.
+      + Apply same method to process dev and set to make them have same distribution.
+      + Consider examining examples your algorithm got right as well as the ones it got wrong.
+      + Perhaps, the training set and dev/test set come slightly from different distribution.
+  * Mismatched training and dev/test set
+    - Training set and dev/test set are on the different distribution:
+      + Don't mix and shuffle the training set and dev/test set. Just keep the original distribution of training set. But put half of dev/test set into training set, and the left half part of dev/test set would be in another same distribution. DL algorithm is strong to processing the training set with different kinds of distribution over the long term.
+    - How to choose to parts of dataset to lean?
+      + If the training set and dev set come from different distribution, we can't say high variance/bias we have got any longer.
+      + Make a small part of training-dev set, then observer the error different on training set and training-dev set.
+      + The error different between training-dev and dev set is big, it means data mismatch problem.
+    - DL algorithm is easy to over-fit on the subset of all the data.
+  * Learning from multiple tasks:
+    - Transfer learning:
+      + By means of structure and parameters of the other model, if you have large size of training data for the new task, you can retrain all the parameters initializing with previous parameters. If the training set of new task is small, just retrain the last layer.
+      + Two concepts: 
+        * Pre-training: the parameters from previous model.
+        * Fine-tuning: the parameters retrain from pre-training.
+      + When transfer learning makes sense.
+        * Task A and B have the same input x.
+        * You have a lot more data for task A than task B.
+        * Low level features from A could be helpful for learning B.
+    - Multiple tasks learning:
+      + When multi-task learning make sense:
+        * Training on a set of tasks that could benefit from having shared lower-level features.
+        * Amount of data you have for each task is quite similar.
+        * Can train a big enough neural network to do well on all the tasks.
+  * End-to-end learning:
+    - The training models are chosen based on size of training set.
+    - End-to-end methods can work well on large data set.
+    - Pros and cons:
+      + Pros:
+        * Let the data speak
+        * less hand-designing of components needed
+      + Cons:
+        * May need large amount of data
+        * Excludes potentially useful hand-designed components.
 
 
 ## Lecture4
