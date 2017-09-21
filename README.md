@@ -35,8 +35,7 @@
         -  Tanh: 
         better than logistic because the median point locates in right zero, but logistic locates in 0.5. 
         - Relu: 
-        most used in current days. High speed even it is not differential, but still works well.There is a problem in "relu" that is named "dying relu".
-        https://datascience.stackexchange.com/questions/5706/what-is-the-dying-relu-problem-in-neural-networks
+        most used in current days. High speed even it is not differential, but still works well.There is a problem in "relu" that is named "dying relu". https://datascience.stackexchange.com/questions/5706/what-is-the-dying-relu-problem-in-neural-networks
         - Leaky relu: 
         just a transform for relu when w less than zero, multiply a small number to w.              
  
