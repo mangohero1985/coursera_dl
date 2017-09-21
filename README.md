@@ -20,7 +20,7 @@
       - Cost function = averaging(loss function). Cost function would involve in back-propagation. 
       - Learning rate, hidden layer size and number of nodes are hyper-parameter. Kinds of method can be used to choose them. Try them by your self.
 #### week4:
-  - Deep neural network: step by step
+- Deep neural network: step by step
     - The difference from shallow neural network is just using loop to finish forward and back propagation.
     - Cultivate yourself for a good writing habit. 
         - Superscript $[l]$ denotes a quantity associated with the $l^{th}$ layer.
@@ -29,14 +29,15 @@
             Example: $x^{(i)}$ is the $i^{th}$ training example.
         - Lower-script $i$ denotes the $i^{th}$ entry of a vector.
             Example: $a^{[l]}_i$ denotes the $i^{th}$ entry of the $l^{th}$ layer's activations).
-  - Activation function choose:
-        - Logistic regression: 
+
+- Activation function choose:
+    - Logistic regression: 
           Just for last layer for binary classification. Almost no ones choose it as activation function in hidden lay.
-        -  Tanh: 
+    -  Tanh: 
         better than logistic because the median point locates in right zero, but logistic locates in 0.5. 
-        - Relu: 
+    - Relu: 
         most used in current days. High speed even it is not differential, but still works well.There is a problem in "relu" that is named "dying relu". https://datascience.stackexchange.com/questions/5706/what-is-the-dying-relu-problem-in-neural-networks
-        - Leaky relu: 
+    - Leaky relu: 
         just a transform for relu when w less than zero, multiply a small number to w.              
  
  		Don't be lazy and do by yourself.
