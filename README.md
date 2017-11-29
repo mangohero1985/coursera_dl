@@ -124,7 +124,7 @@
 #### week3
    * Hyper-parameter tuning
      - Hyper-parameter:
-       + Learning rate $\alpha$ *****
+       + Learning rate $\alpha$ (*****)
        + Momentum $\beta$
        + Adam: $\beta_{1}$, $\beta_{2}$, $\epsilon$
        + Number of layers
@@ -226,6 +226,10 @@
         * Excludes potentially useful hand-designed components.
 
 
-## Lecture4
+## Convolutional Neural Network
+#### week1
+#### week2
+#### week3
+#### week4
 ## Lecture5
 (latex math viewer: https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related)
