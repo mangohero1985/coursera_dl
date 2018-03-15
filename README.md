@@ -228,8 +228,138 @@
 
 ## Convolutional Neural Network
 #### week1
+  * Learning objectives:
+    - Understand the convolution operation
+    - Understand the pooling operation
+    - Vocabulary used in CNN(Padding, stride, filter....)
+  * 卷积神经网络基本概念
+    - Computer Vision
+    - Edge Detection（Filter基本操作）
+      + 使用一个NxN的矩阵作为filter/kernel逐行逐列的扫描数据矩阵
+      + 可以使用特别的filter去探测vertical_edge或者horiontal_edge(有很多矩阵的配置可以选择)
+      + 也可以作为参数去学习filter中各个位置的值，并通过反向传播算法来求出它们。
+      + 也可以学出各种角度的edge
+    - Padding基本操作
+      + 问题: 在经过多层卷积之后，处于图像边缘的信息将会丢失。
+      + 解决方法： 在图像的外侧填充一些像素，这个填充就是padding
+      + Valid卷积：没用padding
+      + Same卷积：输出数据和输入数据有相同的size p_size = f_size-1/2
+      + 有点：
+        * 防止数据缩水
+        * 位于边缘的数据由于padding的存在也能够多次采样
+    - Stride基本操作
+      + output_size = (n_size+2*p_size-f_size)/2+1
+      + 如果算出size不是整数，就做floor操作
+    - Convolutions over volume（超过两维以上的卷积）
+      + filter的channel和输入数据的channel维度相同
+    - One of layers of convolutional network
+      + 跟标准的神经网络对比，卷积神经网络的输入对应标准神经网络的输入，卷积层的filter相当于权重weight。然后wx+b可以经过一次非线性的变化（relu...)。这就是一个标准神经网络的结构。所以可以使用反向传播来进行优化。
+    - Simple Convolutional network example
+      + 输入矩阵的size在不断的变小，filter的数量（channels）的size在逐渐的增大。
+      + 典型的卷积神经网络通畅有三层(convolution, pooling, fully-connected)
+      + pooling层和fully-connected层比convolution层更容易设计。
+    - Pooling layers
+      + 优点：减少模型大小，提高计算速度。增加提取特征的鲁棒性。
+      + Max pooling
+        * 使用固定的size去filter和stride作为超参数。（常用选择，（2，2）/(3,2)）
+      + Average pooling:并不是特别常用。
+      + 在pooling技巧中很少使用padding 
+    - CNN example
+      + 卷积神经网络的层计算：
+        * 一个conv层+一个pooling层被称为一层。统计具有权重和参数的层叫做一层。
+        * 在几层C+V的叠加之后，进行fully-connected操作。
+        * 尽量不要自己设置超参数，看别人的文章来选择超参数。
+        * 数据的size的增加，数据size会不断减少。同事channel的size在不断的增加。
+    - Why convolutions
+      + 使用卷积神经网络的优点：
+        * parameter sharing and sparsity of connections.
 #### week2
+  * Learning objectives:
+    - Understand foundational papers
+    - Analyze the dimentionally reduction of a volume
+    - Residual network
+    - Skip-connection
+  * Deep convolutional models: case studies
+    - Classic networks
+    - ResNets
+    - Networks in networks
+    - Inception network
+  * Advices for using ConvNets
+    - Open-source implementaion
+    - Transfer learning
+    - Data Augmentation
+    - State of computer vision
 #### week3
+  * Learning objectives:
+    - Object localization, object detection and landmark finding
+    - Non-max suppression
+    - intersection over union
+    - Label a dataset
+    - Vocabulary(Landmark, anchor, bounding box, grid)
+  * Detecion algorithm
+    - Object localization
+    - Landmark detection
+    - Object detection
+    - Convolutional implementation of sliding windows
+    - Bounding box predictions
+    - intersection over union
+    - Non-max suppression
+    - Anchor boxes
+    - YOLO algirithm
 #### week4
+  * Face recognition
+    - One shot learning
+    - Siamese network
+    - Triplet loss
+    - Face verification and binary classification
+  * Neural style transfer
+    - Deep ConvNets learning
+    - Cost function
+    - Content cost function
+    - Style cost function
+    - 1D and 3D generalizations
 ## Lecture5
+#### week1
+  * Recurrent neural networks
+    - Notation
+    - RNN model
+    - Backpropagation through time
+    - Different types of RNNs
+    - Language model and sequence generation
+    - Sampling novel sequences
+    - Vanishing gradients with RNNs
+    - Gated Recurrent Unit(GRU)
+    - Long short term memory(LSTM)
+    - Bidirection RNN
+    - Deep RNNs
+#### week2
+  * Word embedding
+    - Word representation
+    - Using word embeddings
+    - Properties of word embeddings
+    - Embedding matrix
+  * Learning word embedding: Word2vec&Glove
+    - Learning word embeddings
+    - Word2vec
+    - Negative sampling
+    - Glove word vectors
+  * Application using word embeddings
+    - Sentiment classifications
+    - Debiasing word embeddings
+#### week3
+  * Various sequence to sequence architectures
+    - Basic models
+    - Picking the most likely sentence
+    - Beam search
+    - Refinements to Beam search
+    - Error analysis in beam search
+    - Bleu score
+    - Attention model intuition
+    - Attention model
+  * Speech recognition
+    - Speech recognition
+    - Trigger word detection
+
+
+
 (latex math viewer: https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related)
