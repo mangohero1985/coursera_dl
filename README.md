@@ -244,7 +244,7 @@
       + 解决方法： 在图像的外侧填充一些像素，这个填充就是padding
       + Valid卷积：没用padding
       + Same卷积：输出数据和输入数据有相同的size p_size = f_size-1/2
-      + 有点：
+      + 优点：
         * 防止数据缩水
         * 位于边缘的数据由于padding的存在也能够多次采样
     - Stride基本操作
