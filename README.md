@@ -281,6 +281,10 @@
     - Skip-connection
   * Deep convolutional models: case studies
     - Classic networks
+      + LeNet
+        * 非常基本的卷积神经网络 data->conv->avg_pool->conv->avg_pool->fully_con->y
+      + AlexNet
+      + VGG
     - ResNets
     - Networks in networks
     - Inception network
