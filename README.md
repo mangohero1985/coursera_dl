@@ -280,19 +280,41 @@
     - Residual network
     - Skip-connection
   * Deep convolutional models: case studies
-    - Classic networks
-      + LeNet
+    - Classic networks(n_h & n_w (down), n_c(up) )
+      + LeNet:
         * 非常基本的卷积神经网络 data->conv->avg_pool->conv->avg_pool->fully_con->y
-      + AlexNet
-      + VGG
-    - ResNets
-    - Networks in networks
+      + AlexNet:
+        * input->conv->max-pool->conv->max-pool->conv-conv-conv-max-pool-fully-con-softmax
+      + VGG-16:
+        * input->conv(same-padding)->pool->conv(same-padidng)->pool->conv(same-padding)->....(3 times)_>_FC->FC->softmax
+    - ResNets:
+      + 必须是same-padding的网络才可以进行skip-connection.
+      + 直接copy两层以前的a到当前的激活函数中，a**[l+2] = g(z**[l+2]) 变成了 a**[l+2] = g(z**[l+2]+ a**[l]). 这样可以避免在层数过深的情况前产生的gradient decay/explode. 这也叫做skip-connection.
+      + 在residual不足的情况下，随着网络的加深，training_error会在达到一点的低点后随着网络的加深变大。但是在加入residual的网络中，随着层数的加深training_error会一直不断的减小。有研究者在1000多层的深度网络中做过实验。
+    - Networks in networks(1x1 convolution):
+      + 在channel比较多的输入中1x1的filter会有比较好的作用。原因就是使用1*1的filter在数据上扫描将会把数据在channel上的n维vector输出到real_number, 如果使用很多个filters相当于对输入的每个在channel向的所有slices做了fully-connected.
     - Inception network
+      + 自动选择filter维度已经决定是否需要使用卷子层或者池化层。简单来说，在输入之后的层里叠加各种想要使用的conv维度或者pooling技术，然后在一层中将他们pack起来的技术。
+      + 由于计算成本非常高，这里可以引入1x1conv的技术来降低参数的规模。一般来说可以把参数的个数降低一个数量级。使用方法，在原来的输入层和卷积层中间加入1x1conv。这个层一般被称为"bottleneck layer"。
+      + 具体例子：
+        * input: 28*28*192
+        * input-> 1x1 conv = 28*28*64
+        * input-> 1*1 conv-> 3*3 conv = 28*28*128
+        * input-> 1*1 conv-> 5*5 conv = 28*28*32
+        * input-> 3*3 pooling-> 1*1 conv = 28*28*32
+      + 之后将这些子channel累加起来28*28*(64+128+32+32)
+      + 同样这样的结构可以被扩展到multiple-layer[Szegday,2014: Going deeper with convolutiona]
   * Advices for using ConvNets
     - Open-source implementaion
+      + 下载实现别人的project并且贡献自己的project.
     - Transfer learning
+      + 如果有很少数据的情况下，使用开源已经训练好的weight并且freeze这些已经训练好的参数和层，然后在后面加入自己需要层。
+      + 数据量很大， 可以冻结其中一部分层的weight,更新另一部分的weight。
+      + 也可以把weight当做初始化，使用新数据去更新它们。
     - Data Augmentation
-    - State of computer vision
+      + 垂直镜像，随机修剪，旋转，扭曲
+      + color shifting
+      + 多线程每个处理不同的augment方法并且作为mini_batch.
 #### week3
   * Learning objectives:
     - Object localization, object detection and landmark finding
@@ -363,6 +385,12 @@
   * Speech recognition
     - Speech recognition
     - Trigger word detection
+## 常见知识点：
+  * gradient saturation（https://www.quora.com/Why-would-a-saturated-neuron-be-a-problem）:
+    - 梯度饱和问题: 在神经网络中，经常选择sigmoid或者tangent作为激活函数。这两种激活函数的作用都是把一个infinite的值映射到finite的范围中去。输入输出不能保证在一个范围内，激活输出被压缩到了一个固定的区间内。如果input和weight使激活的output接近于边界的情况就被称作饱和。这种情况将会导致在反向传播的时候曲线的梯度接近于0.
+    - 解决方法：
+      + 选择non-saturation的激活函数
+      + 加入regularization（dropout, l2, sparsity等等）
 
 
 
