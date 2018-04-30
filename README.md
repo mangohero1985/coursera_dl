@@ -346,7 +346,7 @@
 		+ 由于使用卷积结构，计算效率非常高。可以进行real-time的object recognition处理。
     - intersection over union
 		+ 这个方法可以用来评价对象检测算法。
-		+ 计算方法：（探测边框面积 交 真实对象边框面积）／探测边框面积 >=threshold
+		+ 计算方法：（探测边框面积 交 真实对象边框面积）／UNION面积>=threshold
     - Non-max suppression
 		+ 这个方法保证检索算法对每个对象只检测一次。
 		+ 具体做法：先找到对object检测具有最大概率的box。然后Non-max suppression将会去寻找和当前box具有最大IoU的boxes，然后一直剩下这些boxes的输出。
