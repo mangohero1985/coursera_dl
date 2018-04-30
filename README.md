@@ -318,17 +318,35 @@
 #### week3
   * Learning objectives:
     - Object localization, object detection and landmark finding
-    - Non-max suppression
+	- Non-max suppression
     - intersection over union
     - Label a dataset
     - Vocabulary(Landmark, anchor, bounding box, grid)
   * Detecion algorithm
-    - Object localization
-    - Landmark detection
+    - Object localization and  Object detection
+	  + 想分类并且识别图像，首先要识别图像中的物体。
+	  + 以自动驾驶为例，图像中可能包含objects为：行人，汽车，摩托车，背景等等。
+	  + 为了确定图片中的对象，分类器的最后一层比如softmax可以被设计为输出对象标签和图像组物体位置的上下左右四个特征（bx:物体中心位置在整个图片横坐标的比例，by：物体中心位置在整个纵坐标的具体位置，bh：物体高度跟整个图片高度的比例，bw：物体宽度和真个图片宽度的比例）
+	  + 识别图像中局部存在的object，可以是unique object recognition也可以是multiple objects recognition。
+   	  + loss function可以根据数据y的具体情况进行选择。可以对输出为1/0的纬度使用logistic，对输出为numerical的维使用squareloss，可以对多维1/0的使用neg_log_likelihood_loss。
+    - Landmark finding
+	  + 可以在图片中设置一些landmark特征，比如眼睛的位置，眼睛的轮廓或者嘴巴的轮廓，这些特征可以作为判定人脸表情的features。
+	  + 这样的方法还可以被用于识别物体的姿态。
     - Object detection
+	  + 使用一个窗口slide去扫面整个图片，对于任何一个window都是用convnet去识别窗口种是否包含要识别的对象（例：汽车识别的问题，训练集需要准备跟窗口大小一样的汽车图片）。每个被扫描的window都相当于一个识别问题。
+	  + coarse granularity的扫描会使识别准确度降低，因为有些对象物体并不都能被完全的扫描到窗口里。find granularity的方法由于skip step太多造成计算成本的上升。
     - Convolutional implementation of sliding windows
+		+ 将全连接层转化为卷积层
+		+ 通过将全连阶层更改为卷积层，例如在全连接层选择5x5的window，全连接的filter的个数仍然为原始全连接层的维度。[Paper: overfeat: integrated recognition, localization and detection using convolutional networks]
+		+ 缺点：边框的位置不准确
     - Bounding box predictions
+		+ YOLO算法(you only look once) 
+		+ 将输入数据x映射为grid_cells(n_grid*n_grid*n_y),n_grid代表网格的维度，n_y代表输出y维度。
+		+ objects备份配到某一个grid的根据是，object的中心坐标落在哪一个格子中。
+		+ 由于使用卷积结构，计算效率非常高。可以进行real-time的object recognition处理。
     - intersection over union
+		+ 这个方法可以用来评价对象检测算法。
+		+ 计算方法：（探测边框面积 交 真实对象边框面积）／探测边框面积 >=threshold
     - Non-max suppression
     - Anchor boxes
     - YOLO algirithm
