@@ -348,8 +348,17 @@
 		+ 这个方法可以用来评价对象检测算法。
 		+ 计算方法：（探测边框面积 交 真实对象边框面积）／探测边框面积 >=threshold
     - Non-max suppression
+		+ 这个方法保证检索算法对每个对象只检测一次。
+		+ 具体做法：先找到对object检测具有最大概率的box。然后Non-max suppression将会去寻找和当前box具有最大IoU的boxes，然后一直剩下这些boxes的输出。
     - Anchor boxes
+		+ 让一个box检测多个objects
+		+ 在一个输出y的向量中叠加多次可能探测的对象的输出Y~{y1,y2,...yn}
+		+ 这个方法会让算法具有更高的针对性（例如要探测的图像中的objects具有瘦高或者横宽特性）。
     - YOLO algirithm
+	- Region proposal(YOLO之前的传统方法)
+		+ R-CNN: 这个概念会在很多的物体检测的文献中出现。
+		+ 先检测出有意义的区域，然后针对这些区域进行卷积。而不是对整个图片的所有区域进行卷积。
+		+ Segmentation algorithm
 #### week4
   * Face recognition
     - One shot learning
