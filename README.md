@@ -362,6 +362,11 @@
 #### week4
   * Face recognition
     - One shot learning
+		+ 人脸识别是一个比较难的问题，就是因为人脸识别要解决的是一个one-shot识别问题。就是在只有一个训练sample的情况下解决识别问题。
+		+ learning similarity function:
+			+ f(img1, img2) = degree of difference between images.
+			+ if f(img1, imags) <= threshold
+			
     - Siamese network
     - Triplet loss
     - Face verification and binary classification
