@@ -366,15 +366,32 @@
 		+ learning similarity function:
 			+ f(img1, img2) = degree of difference between images.
 			+ if f(img1, imags) <= threshold
-			
     - Siamese network
+		+ Paper: [deepface]
+		+ 把两个图片输入给相同结构神经网络，神经网络会输出对应两个图片的vector。这个步骤叫做encoding。然后比较这两个encoding。
+		+ loss function: 
+			+ if two images are same person, ||encoding_img1- encoding_img2||^2 is small
+			+ if two images are difference person, ||encoding+img1 - encoding_img2||^2 is large.
     - Triplet loss
+		+ Paper: [facenet 2015]
+		+ 通常情况下会让objective函数同时看三张图片: Anchor, positve和negative。
+		+ ||encoding_Anchor - encoding_Positive||^2 - ||encoding_Anchor - encoding_Positive|| + alpha <= 0。这里alpha被称作margin（和svm中的margin有一样的意义）。 
+		+ max(||encoding_Anchor - encoding_Positive||^2 - ||encoding_Anchor - encoding_Positive|| + alpha, 0)
+		+ 为了使分类器获得更好的效果，就需要使||encoding_Anchor - encoding_Positive||^2 约等于||encoding_Anchor - encoding_Positive||。论文中有更详细的介绍。
+		+ 可以寻找一些已经训练好的参数（transfer learning）
     - Face verification and binary classification
+		+ 可以把两个图片最后的encoding输出看作使binary_classification问题。最后一层的输出使用sigmoid函数。
+			+ objective_function y_hat = sigmoid(sum(w_i*|encoding(x_i)_k-encoding(x_j)_k|))
   * Neural style transfer
     - Deep ConvNets learning
-    - Cost function
+		+ Paper:[A neural algorithm of artistic style]
+	- Cost function
+		+ Loss function = alpha*Loss_content(content_image, generate_image) + beta*loss_style(style_image, generate_image)
+		+ 使用gradient descent去最小化loss_function
     - Content cost function
     - Style cost function
+		+ 计算style_matrix（n_channel x n_channel), 每一维就是channel和channel之间的correlation。
+		+ loss_funtion = ||G_style - G_generate||^2
     - 1D and 3D generalizations
 ## Lecture5
 #### week1
