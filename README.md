@@ -395,6 +395,7 @@
     - Style cost function
 		+ 计算style_matrix（n_channel x n_channel), 每一维就是channel和channel之间的correlation。
 		+ loss_funtion = ||G_style - G_generate||^2
+		<img src="./images/style_cost.png" alt="Drawing" width="500" height="150"/>
     - 1D and 3D generalizations
 ## Lecture5
 #### week1
