@@ -391,7 +391,7 @@
     - Content cost function
 		+ content_cost的输入是卷积神经网络某个隐藏层的激活。cost比较原始a_content和生成图像激活a_G的不同。
 		+ content_cost的作用就是确保生成图像和原始图像尽可能的相似。
-		<img src="./images/content_cost.png" alt="Drawing" style="width: 200px;"/>
+		<img src="./images/content_cost.png" alt="Drawing" style="width: 100px;"/>
     - Style cost function
 		+ 计算style_matrix（n_channel x n_channel), 每一维就是channel和channel之间的correlation。
 		+ loss_funtion = ||G_style - G_generate||^2
