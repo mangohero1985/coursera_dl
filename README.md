@@ -386,12 +386,12 @@
     - Deep ConvNets learning
 		+ Paper:[A neural algorithm of artistic style]
 	- Cost function
-		+ Loss function = alpha*Loss_content(content_image, generate_image) + beta*loss_style(style_image, generate_image)
+		+ Loss function = alpha\*Loss_content(content_image, generate_image) + beta\*loss_style(style_image, generate_image)
 		+ 使用gradient descent去最小化loss_function
     - Content cost function
 		+ content_cost的输入是卷积神经网络某个隐藏层的激活。cost比较原始a_content和生成图像激活a_G的不同。
 		+ content_cost的作用就是确保生成图像和原始图像尽可能的相似。
-		<img src="./images/content_cost.png" alt="Drawing" style="width: 40px;height: 20px"/>
+		<img src="./images/content_cost.png" alt="Drawing" style="width: 60%;height: 40px"/>
     - Style cost function
 		+ 计算style_matrix（n_channel x n_channel), 每一维就是channel和channel之间的correlation。
 		+ loss_funtion = ||G_style - G_generate||^2
