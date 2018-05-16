@@ -401,7 +401,11 @@
 #### week1
   * Recurrent neural networks
     - Notation
+		* input x: sequence
+		* output y: sequence
     - RNN model
+		* 不仅当前的input参与到了y的预测，之前的steps的输入也参与到当前y的预测。
+		* a的激活函数经常选择relu/tanh等常用的激活函数。y的激活函数类似于神经网络的最后一层的分类激活sigmoid/softmax等等。
     - Backpropagation through time
     - Different types of RNNs
     - Language model and sequence generation
